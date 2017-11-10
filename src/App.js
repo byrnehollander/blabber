@@ -40,7 +40,7 @@ class App extends Component {
 
   onCreation = (newReview) => {
     const data = this.state.data;
-    data.push(newReview.data)
+    data.unshift(newReview.data)
     this.setState({data});
   }
 
