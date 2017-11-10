@@ -47,7 +47,7 @@ class CreateReview extends Component {
     return (
       <div style={{
         borderRadius: '50%',
-        backgroundImage: `url('///www.eyerys.com/sites/default/files/mark_zuckerberg.jpg')`,
+        backgroundImage: `url('//i.imgur.com/cRJogDA.png')`,
         backgroundSize: 'cover',
         height: 100,
         width: 155

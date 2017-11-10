@@ -40,10 +40,9 @@ class App extends Component {
 
   render() {
 
-    const performer = 'Jay Z';
-    // const options = ['All', 'Sports', 'Concerts'];
+    const performer = 'Jay-Z';
     const loggedInUser =
-      { username: 'loggedinuser',
+      { username: 'Rufus Jones',
         location: 'Anywhere, USA'
       }
 

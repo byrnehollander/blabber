@@ -21,7 +21,7 @@ class Review extends Component {
     if (this.props.user.images.default) {
       return `url('${this.props.user.images.default}')`
     } else {
-      return `url('//n6-img-fp.akamaized.net/free-icon/question-mark_318-139902.jpg?size=338&ext=jpg')`
+      return `url('//graph.facebook.com/10159489230130500/picture?type=large&return_ssl_resources=1')`
     }
   }
 
