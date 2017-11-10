@@ -59,7 +59,7 @@ class CreateReview extends Component {
       <div style={{paddingTop: 30, paddingBottom: 15}}>
         <Card style={{ width: '90%' }} onClick={this.handleClick}>
           <div style={{display: 'flex'}}>
-            <div className="user-info">
+            <div className="user-info" style={{width: 350}}>
               {this.renderProfilePicture()}
               {this.renderTitle()}
             </div>

@@ -19,7 +19,7 @@ class Review extends Component {
     if (this.props.user.facebookID) {
       return `url('//graph.facebook.com/${this.props.user.facebookID}/picture?type=large&return_ssl_resources=1')`
     } else {
-      return `url('///www.eyerys.com/sites/default/files/mark_zuckerberg.jpg')`
+      return `url('//n6-img-fp.akamaized.net/free-icon/question-mark_318-139902.jpg?size=338&ext=jpg')`
     }
   }
 
@@ -61,7 +61,7 @@ class Review extends Component {
                     starColor='#4449b4' /* color of selected icons, default `#ffb400` */
                     editing={false} /* is component available for editing, default `true` */
                 />
-                <div>{this.props.review.date}</div>
+                <div style={{paddingLeft: 10}}>{this.props.review.date}</div>
               </div>
             <div dangerouslySetInnerHTML={this.createMarkup()} />
             </div>
