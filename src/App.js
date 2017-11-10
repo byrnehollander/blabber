@@ -8,7 +8,7 @@ import './App.css';
 import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
 
-const base_url = '192.168.3.78:8100';
+export const base_url = 'http://192.168.3.78:8100';
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    axios.get(`http://${base_url}/reviews/performers/927`)
+    axios.get(`${base_url}/reviews/performers/927`)
       .then((response) => {
         this.setState({data: response.data})
         var total = 0;
@@ -37,6 +37,7 @@ class App extends Component {
         console.log(error);
       });
   }
+
   render() {
 
     const performer = 'Jay Z';
@@ -45,47 +46,6 @@ class App extends Component {
       { username: 'loggedinuser',
         location: 'Anywhere, USA'
       }
-
-  const reviewData =
-  [
-    {
-        review_text: `Hadn't been to **MSG** in years! What a difference from the last time I saw an event there.
-                  The seating is pretty great. The stage, floor is clearly visible from anywhere you are seated in the arena.
-                  They offer various food options including gluten free.
-                  They have lots of bars, refreshment stations, seating around bars and food and decent service.
-                  The best part is the seating and all of the TVs and monitors within the arena and visible to all attendees seated. The first row even include personal monitors for each and every seat.`,
-        rating: 4,
-        created_at: '2017-11-10T18:30:06',
-        id: '123',
-        user: {
-          username: 'bhollander',
-          fullName: 'Byrne Hollander',
-          location: 'New York, NY',
-          images: {
-            default: 'graph.facebook.com/10159489230130500/picture?type=large&return_ssl_resources=1'
-          }
-        }
-      ,
-  },
-  {
-
-      review_text: `*What a show!*`,
-      media: {
-        first: 'https://s3-media2.fl.yelpcdn.com/bphoto/jkBYbfpigFq7RNI02jJz6A/o.jpg',
-        second: 'https://s3-media3.fl.yelpcdn.com/bphoto/pMGogUE5HwcvcJSZE6KyRg/o.jpg',
-        third: 'https://s3-media4.fl.yelpcdn.com/bphoto/GJ95BLY3xRykjfTjl9Ie7Q/o.jpg'
-      },
-      rating: 5,
-      created_at: '2017-11-09T02:00:00',
-      id: '124',
-      user: {
-        username: 'another user',
-        fullName: 'Mark Zuckerberg',
-        location: 'San Francisco, CA'
-      }
-
-}
-]
 
   const eventTitle = `Jay-Z on 8/30/17 at Madison Square Garden`
     return (

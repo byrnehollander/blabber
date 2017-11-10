@@ -57,7 +57,7 @@ class Review extends Component {
               <div className="top-line-review">
                 <StarRatingComponent
                     // renderStarIcon={() => <span></span>} can make it so star is inside of a rounded rectangle
-                    name={this.props.review.id}
+                    name="score"
                     value={this.props.review.rating} // should be dynamic
                     starColor='#4449b4' /* color of selected icons, default `#ffb400` */
                     editing={false} /* is component available for editing, default `true` */

@@ -3,6 +3,8 @@ import CreateReviewSection from './CreateReviewSection';
 import { Button } from 'antd';
 import { Card } from 'antd';
 import StarRatingComponent from 'react-star-rating-component';
+import axios from 'axios';
+import {base_url} from './App';
 
 class CreateReview extends Component {
   constructor(props) {
@@ -16,6 +18,16 @@ class CreateReview extends Component {
       venueContent: '',
       seatContent: ''
     };
+  }
+
+  createReview = () => {
+    axios.post(`${base_url}/reviews/events/3820601`, {rating: this.state.performerStars, review_text: this.state.performerContent})
+      .then((response) => {
+        this.setState({open: false});
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   handleClick = () => {
@@ -78,7 +90,7 @@ class CreateReview extends Component {
           <CreateReviewSection title='Venue' setStars={this.setVenueStars} setContent={this.setVenueContent} content={this.state.venueContent}/>
           <CreateReviewSection title='Seats' setStars={this.setSeatStars} setContent={this.setSeatContent} content={this.state.seatContent}/>
           <div style={{display: 'flex', justifyContent: 'space-between', maxWidth: '90%'}}>
-            <Button type="primary">Create Review</Button>
+            <Button onClick={() => this.createReview()} type="primary">Create Review</Button>
             <a onClick={this.handleClick}>Nah, I don't want to write a review</a>
           </div>
         </div>
