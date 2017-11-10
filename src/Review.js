@@ -58,7 +58,7 @@ class Review extends Component {
               <div className="top-line-review">
                 <div style={{fontSize: 28}}>
                   <StarRatingComponent
-                      renderStarIcon={() => <span className="seatgeek-icon">a</span>}
+                      // renderStarIcon={() => <span className="seatgeek-icon">a</span>}
                       name="score"
                       value={this.props.review.rating} // should be dynamic
                       starColor='#4449b4' /* color of selected icons, default `#ffb400` */
