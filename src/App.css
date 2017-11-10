@@ -1,5 +1,5 @@
 .header {
-  padding-left: 10%;
+  padding: 0;
   display: flex;
   align-items: center;
   font-size: 24px;
@@ -33,7 +33,7 @@
 }
 
 .subheader {
-  padding-left: 10%;
+  padding-left: 0;
 }
 
 .ant-carousel .slick-slide {
