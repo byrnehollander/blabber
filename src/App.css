@@ -99,7 +99,14 @@
   padding-bottom: 10px;
 }
 
-/*@font-face {
-  font-family: Seatgeek;
-  src: url('https://github.com/byrnehollander/blabber/blob/master/font.ttf?raw=true');
-}*/
+@font-face {
+  font-family: 'glyphterregular';
+  src: url('font.woff2') format('woff2'),
+       url('font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.seatgeek-icon {
+  font-family: 'glyphterregular';
+}
