@@ -14,7 +14,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      average: 0,
+      numReviews: '...'
     };
   }
 
@@ -22,17 +24,21 @@ class App extends Component {
     axios.get(`http://${base_url}/reviews/performers/927`)
       .then((response) => {
         this.setState({data: response.data})
+        var total = 0;
+        response.data.map(function(rev) {
+          total += rev.rating
+        })
+        const numReviews = response.data.length;
+        var average = total / numReviews;
+        this.setState({average, numReviews});
+
       })
       .catch(function (error) {
         console.log(error);
       });
   }
-
   render() {
 
-
-    const averageReview = 4;
-    const numReviews = 22;
     const performer = 'Jay Z';
     // const options = ['All', 'Sports', 'Concerts'];
     const loggedInUser =
@@ -87,11 +93,11 @@ class App extends Component {
           <h2 className="header">
             <StarRatingComponent
                 name='average'
-                value={averageReview} // should be dynamic
+                value={this.state.average} // should be dynamic
                 starColor='#4449b4' /* color of selected icons, default `#ffb400` */
                 editing={false} /* is component available for editing, default `true` */
             />
-            <div className="review-count">{numReviews} reviews</div>
+            <div className="review-count">{this.state.numReviews} reviews</div>
           </h2>
           <ImageCarousel
             first='http://cdn.cnn.com/cnnnext/dam/assets/170822114656-billy-joel-super-tease.jpg'
