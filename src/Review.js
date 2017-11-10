@@ -25,7 +25,6 @@ class Review extends Component {
 
   renderProfilePicture = () => {
     const bg = this.setBackgroundImage();
-    console.log(bg)
     return (
       <div style={{
         borderRadius: '50%',
@@ -56,6 +55,7 @@ class Review extends Component {
             <div className="review-body">
               <div className="top-line-review">
                 <StarRatingComponent
+                    // renderStarIcon={() => <span></span>} can make it so star is inside of a rounded rectangle
                     name={this.props.review.id}
                     value={this.props.review.score} // should be dynamic
                     starColor='#4449b4' /* color of selected icons, default `#ffb400` */

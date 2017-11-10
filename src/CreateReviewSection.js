@@ -11,13 +11,14 @@ class CreateReviewSection extends Component {
         <div className='create-review-header'>
           <div style={{paddingRight: 10}}>{this.props.title}</div>
           <StarRatingComponent
-              name={this.props.title}
-              value={0} // should be dynamic
-              starColor='#4449b4' /* color of selected icons, default `#ffb400` */
-              editing={true} /* is component available for editing, default `true` */
+            name={this.props.title}
+            value={0} // should be dynamic
+            starColor='#4449b4' /* color of selected icons, default `#ffb400` */
+            editing={true} /* is component available for editing, default `true` */
+            onStarClick={this.props.setStars} /* on icon click handler */
           />
         </div>
-        <TextArea rows={4} />
+        <TextArea rows={4} value={this.props.content} onChange={this.props.setContent} />
       </div>
     );
   }

@@ -8,7 +8,13 @@ class CreateReview extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      performerStars: 0,
+      venueStars: 0,
+      seatStars: 0,
+      performerContent: '',
+      venueContent: '',
+      seatContent: ''
     };
   }
 
@@ -38,15 +44,39 @@ class CreateReview extends Component {
     )
   }
 
+  setPerformerStars = (nextValue, prevValue, name) => {
+    this.setState({performerStars: nextValue})
+  }
+
+  setPerformerContent = event => {
+    this.setState({ performerContent: event.target.value });
+  }
+
+  setVenueStars = (nextValue, prevValue, name) => {
+    this.setState({venueStars: nextValue})
+  }
+
+  setVenueContent = event => {
+    this.setState({ venueContent: event.target.value });
+  }
+
+  setSeatStars = (nextValue, prevValue, name) => {
+    this.setState({seatStars: nextValue})
+  }
+
+  setSeatContent = event => {
+    this.setState({ seatContent: event.target.value });
+  }
+
   render() {
     if (this.state.open) {
     return (
       <div style={{paddingTop: 10, paddingBottom: 10}}>
         <div style={{fontSize: 22}}>Review {this.props.eventTitle}</div>
         <div style={{paddingLeft: 40, paddingTop: 15}}>
-          <CreateReviewSection title='Performer'/>
-          <CreateReviewSection title='Venue'/>
-          <CreateReviewSection title='Seats'/>
+          <CreateReviewSection title='Performer' setStars={this.setPerformerStars} setContent={this.setPerformerContent} content={this.state.performerContent}/>
+          <CreateReviewSection title='Venue' setStars={this.setVenueStars} setContent={this.setVenueContent} content={this.state.venueContent}/>
+          <CreateReviewSection title='Seats' setStars={this.setSeatStars} setContent={this.setSeatContent} content={this.state.seatContent}/>
           <div style={{display: 'flex', justifyContent: 'space-between', maxWidth: '90%'}}>
             <Button type="primary">Create Review</Button>
             <a onClick={this.handleClick}>Nah, I don't want to write a review</a>
