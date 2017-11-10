@@ -55,14 +55,16 @@ class Review extends Component {
             </div>
             <div className="review-body">
               <div className="top-line-review">
-                <StarRatingComponent
-                    // renderStarIcon={() => <span></span>} can make it so star is inside of a rounded rectangle
-                    name="score"
-                    value={this.props.review.rating} // should be dynamic
-                    starColor='#4449b4' /* color of selected icons, default `#ffb400` */
-                    editing={false} /* is component available for editing, default `true` */
-                    emptyStarColor='#bababa'
-                />
+                <div style={{fontSize: 28}}>
+                  <StarRatingComponent
+                      // renderStarIcon={() => <span></span>} can make it so star is inside of a rounded rectangle
+                      name="score"
+                      value={this.props.review.rating} // should be dynamic
+                      starColor='#4449b4' /* color of selected icons, default `#ffb400` */
+                      editing={false} /* is component available for editing, default `true` */
+                      emptyStarColor='#bababa'
+                  />
+                </div>
                 <div style={{paddingLeft: 10}}>{moment(this.props.review.created_at).format('MMM Do YYYY')}</div>
               </div>
             <div dangerouslySetInnerHTML={this.createMarkup()} />
