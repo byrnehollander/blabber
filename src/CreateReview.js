@@ -21,7 +21,7 @@ class CreateReview extends Component {
   }
 
   createReview = () => {
-    axios.post(`${base_url}/reviews/events/3820601`, {rating: this.state.performerStars, review_text: this.state.performerContent})
+    axios.post(`${base_url}/reviews/events/3935822`, {rating: this.state.performerStars, review_text: this.state.performerContent})
       .then((response) => {
         this.setState({open: false});
       })
@@ -86,9 +86,9 @@ class CreateReview extends Component {
       <div style={{paddingTop: 10, paddingBottom: 10}}>
         <div style={{fontSize: 22}}>Review {this.props.eventTitle}</div>
         <div style={{paddingLeft: 40, paddingTop: 15}}>
-          <CreateReviewSection title='Performer' setStars={this.setPerformerStars} setContent={this.setPerformerContent} content={this.state.performerContent}/>
-          <CreateReviewSection title='Venue' setStars={this.setVenueStars} setContent={this.setVenueContent} content={this.state.venueContent}/>
-          <CreateReviewSection title='Seats' setStars={this.setSeatStars} setContent={this.setSeatContent} content={this.state.seatContent}/>
+          <CreateReviewSection title='Performer' setStars={this.setPerformerStars} numStars={this.state.performerStars} setContent={this.setPerformerContent} content={this.state.performerContent}/>
+          <CreateReviewSection title='Venue' setStars={this.setVenueStars} numStars={this.state.venueStars} setContent={this.setVenueContent} content={this.state.venueContent}/>
+          <CreateReviewSection title='Seats' setStars={this.setSeatStars} numStars={this.state.seatStars} setContent={this.setSeatContent} content={this.state.seatContent}/>
           <div style={{display: 'flex', justifyContent: 'space-between', maxWidth: '90%'}}>
             <Button onClick={() => this.createReview()} type="primary">Create Review</Button>
             <a onClick={this.handleClick}>Nah, I don't want to write a review</a>
