@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import CreateReviewSection from './CreateReviewSection';
 import { Button } from 'antd';
-
-const clicked = false;
+import { Card } from 'antd';
+import StarRatingComponent from 'react-star-rating-component';
 
 class CreateReview extends Component {
   constructor(props) {
@@ -18,11 +18,23 @@ class CreateReview extends Component {
 
   renderTitle = () => {
     return (
-      <div>
-        <div className='username'>{this.props.user.username}</div>
-        <div className='username'>{this.props.user.location}</div>
-        <a className='username' style={{fontSize: 11}}>Report</a>
+      <div style={{width: '100%'}}>
+        <div className='username'>{this.props.loggedInUser.username}</div>
+        <div className='username'>{this.props.loggedInUser.location}</div>
       </div>
+    )
+  }
+
+  renderProfilePicture = () => {
+    return (
+      <div style={{
+        borderRadius: '50%',
+        backgroundImage: `url('///www.eyerys.com/sites/default/files/mark_zuckerberg.jpg')`,
+        backgroundSize: 'cover',
+        height: 100,
+        width: 155
+        }}
+      />
     )
   }
 
@@ -45,7 +57,25 @@ class CreateReview extends Component {
   } else {
     return (
       <div style={{paddingTop: 30, paddingBottom: 15}}>
-        <a style={{fontSize: 16}} onClick={this.handleClick}>Click to write a review for {this.props.eventTitle}</a>
+        <Card style={{ width: '90%' }} onClick={this.handleClick}>
+          <div style={{display: 'flex'}}>
+            <div className="user-info">
+              {this.renderProfilePicture()}
+              {this.renderTitle()}
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column'}}>
+              <div style={{fontSize: 30, paddingBottom: 10}}>
+                <StarRatingComponent
+                    name='empty'
+                    value={0} // should be dynamic
+                    starColor='#4449b4' /* color of selected icons, default `#ffb400` */
+                    editing={false} /* is component available for editing, default `true` */
+                />
+              </div>
+              <a style={{fontSize: 16}} >Click to write a review for {this.props.eventTitle}</a>
+            </div>
+          </div>
+        </Card>
       </div>
     )
   }

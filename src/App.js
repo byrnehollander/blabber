@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Review from './Review';
+import ReviewList from './ReviewList';
 import CreateReview from './CreateReview';
 import Dropdown from './Dropdown';
 import DateDropdown from './DateDropdown';
@@ -13,22 +13,51 @@ class App extends Component {
     const numReviews = 22;
     const venue = 'Billy Joel';
     // const options = ['All', 'Sports', 'Concerts'];
-    const user =
-      { username: 'bhollander',
+    const loggedInUser =
+      { username: 'loggedinuser',
+        location: 'Anywhere, USA'
+      }
+
+  const reviewData =
+  [
+    {
+      user: {
+        username: 'bhollander',
         fullName: 'Byrne Hollander',
         location: 'New York, NY',
         facebookID: '10159489230130500'
-    };
-    const review =
-    { content: `Hadn't been to **MSG** in years! What a difference from the last time I saw an event there.
-    The seating is pretty great. The stage, floor is clearly visible from anywhere you are seated in the arena.
-    They offer various food options including gluten free.
-    They have lots of bars, refreshment stations, seating around bars and food and decent service.
-    The best part is the seating and all of the TVs and monitors within the arena and visible to all attendees seated. The first row even include personal monitors for each and every seat.`,
-      score: 4,
-      date: '11/4/17',
-      id: '123'
-  };
+      },
+      review: {
+        content: `Hadn't been to **MSG** in years! What a difference from the last time I saw an event there.
+                  The seating is pretty great. The stage, floor is clearly visible from anywhere you are seated in the arena.
+                  They offer various food options including gluten free.
+                  They have lots of bars, refreshment stations, seating around bars and food and decent service.
+                  The best part is the seating and all of the TVs and monitors within the arena and visible to all attendees seated. The first row even include personal monitors for each and every seat.`,
+        score: 4,
+        date: '11/4/17',
+        id: '123'
+      }
+  },
+  {
+    user: {
+      username: 'another user',
+      fullName: 'Mark Zuckerberg',
+      location: 'San Francisco, CA'
+    },
+    review: {
+      content: `*What a show!*`,
+      media: {
+        first: 'https://s3-media2.fl.yelpcdn.com/bphoto/jkBYbfpigFq7RNI02jJz6A/o.jpg',
+        second: 'https://s3-media3.fl.yelpcdn.com/bphoto/pMGogUE5HwcvcJSZE6KyRg/o.jpg',
+        third: 'https://s3-media4.fl.yelpcdn.com/bphoto/GJ95BLY3xRykjfTjl9Ie7Q/o.jpg'
+      },
+      score: 5,
+      date: '11/2/17',
+      id: '124'
+    }
+}
+]
+
   const eventTitle = `Billy Joel on 8/30/17 at Madison Square Garden`
     return (
       <div className="App">
@@ -58,19 +87,18 @@ class App extends Component {
             <DateDropdown />
           </div>
         </div>
-        <hr style={{marginTop: 20, width: '90%'}} />
+        {/* <hr style={{marginTop: 20, width: '90%'}} /> */}
         <div className="create-review">
           <CreateReview
             eventTitle={eventTitle}
+            loggedInUser={loggedInUser}
           />
         </div>
-        <hr style={{marginTop: 20, width: '90%'}} />
+        {/* <hr style={{marginTop: 20, width: '90%'}} /> */}
         <div className="user-reviews">
-          <Review
-            user = {user}
-            review = {review}
-          />
-
+          <ReviewList
+            reviewData={reviewData}
+           />
         </div>
       </div>
     </div>

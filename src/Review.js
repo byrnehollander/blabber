@@ -7,7 +7,7 @@ import ImageCarousel from './ImageCarousel';
 class Review extends Component {
   renderTitle = () => {
     return (
-      <div style={{width: '100%'}}>
+      <div style={{width: 220}}>
         <div className='username'>{this.props.user.username}</div>
         <div className='username'>{this.props.user.location}</div>
         <a className='username' style={{fontSize: 11}}>Report</a>
@@ -15,14 +15,24 @@ class Review extends Component {
     )
   }
 
+  setBackgroundImage = () => {
+    if (this.props.user.facebookID) {
+      return `url('//graph.facebook.com/${this.props.user.facebookID}/picture?type=large&return_ssl_resources=1')`
+    } else {
+      return `url('///www.eyerys.com/sites/default/files/mark_zuckerberg.jpg')`
+    }
+  }
+
   renderProfilePicture = () => {
+    const bg = this.setBackgroundImage();
+    console.log(bg)
     return (
       <div style={{
         borderRadius: '50%',
-        backgroundImage: `url('//graph.facebook.com/${this.props.user.facebookID}/picture?type=large&return_ssl_resources=1')`,
+        backgroundImage: bg,
         backgroundSize: 'cover',
         height: 100,
-        width: 163
+        width: 100
         }}
       />
     )
@@ -51,16 +61,18 @@ class Review extends Component {
                     starColor='#4449b4' /* color of selected icons, default `#ffb400` */
                     editing={false} /* is component available for editing, default `true` */
                 />
-                <div style={{paddingLeft: 10}}>{this.props.review.date}</div>
+                <div>{this.props.review.date}</div>
               </div>
             <div dangerouslySetInnerHTML={this.createMarkup()} />
             </div>
           </div>
-          <ImageCarousel
-            first='https://s3-media2.fl.yelpcdn.com/bphoto/jkBYbfpigFq7RNI02jJz6A/o.jpg'
-            second='https://s3-media3.fl.yelpcdn.com/bphoto/pMGogUE5HwcvcJSZE6KyRg/o.jpg'
-            third='https://s3-media4.fl.yelpcdn.com/bphoto/GJ95BLY3xRykjfTjl9Ie7Q/o.jpg'
-          />
+          {this.props.review.media ? (
+            <ImageCarousel
+              first={this.props.review.media.first}
+              second={this.props.review.media.second}
+              third={this.props.review.media.third}
+            />
+          ) : ('')}
         </Card>
       </div>
     );

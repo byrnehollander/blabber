@@ -11,7 +11,7 @@ class DateDropdown extends Component {
 
   renderDatesList = () => {
     var dateList = dates.map(function(date) {
-      return <Option value={date}>{date}</Option>;
+      return <Option value={date} key={date}>{date}</Option>;
     })
     return (
       <Select defaultValue="All" style={{ width: 120 }} onChange={this.handleChange}>
