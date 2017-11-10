@@ -6,6 +6,7 @@ import DateDropdown from './DateDropdown';
 import ImageCarousel from './ImageCarousel';
 import './App.css';
 import StarRatingComponent from 'react-star-rating-component';
+import axios from 'axios';
 
 class App extends Component {
   render() {
