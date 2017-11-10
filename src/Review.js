@@ -9,7 +9,8 @@ class Review extends Component {
   renderTitle = () => {
     return (
       <div style={{width: 220}}>
-        <div className='username'>{this.props.user.username}</div>
+        <div className='username'>{this.props.user.first_name} {this.props.user.last_name}</div>
+        <div style={{paddingLeft: 16}}>Reviewed on {moment(this.props.review.created_at).format('MMM Do YYYY')}</div>
         <div className='username'>{this.props.user.location}</div>
         <a className='username' style={{fontSize: 11}}>Report</a>
       </div>
@@ -57,7 +58,7 @@ class Review extends Component {
               <div className="top-line-review">
                 <div style={{fontSize: 28}}>
                   <StarRatingComponent
-                      // renderStarIcon={() => <span></span>} can make it so star is inside of a rounded rectangle
+                      // renderStarIcon={() => <span><i src='/Users/byrne/Desktop/icon1.png' height="10" width="10" /></span>}
                       name="score"
                       value={this.props.review.rating} // should be dynamic
                       starColor='#4449b4' /* color of selected icons, default `#ffb400` */
@@ -65,9 +66,9 @@ class Review extends Component {
                       emptyStarColor='#bababa'
                   />
                 </div>
-                <div style={{paddingLeft: 10}}>{moment(this.props.review.created_at).format('MMM Do YYYY')}</div>
               </div>
             <div dangerouslySetInnerHTML={this.createMarkup()} />
+            <div style={{fontSize: 14, paddingTop: 20, paddingBottom: 0, fontStyle: 'italic'}}>Attended {this.props.review.event.title} at <a target="_blank" rel="noopener noreferrer" href={this.props.review.event.venue_link}>{this.props.review.event.venue_name}</a> on {moment(this.props.review.event.datetime_utc).format('MMM Do YYYY')}</div>
             </div>
           </div>
           {this.props.review.media ? (
