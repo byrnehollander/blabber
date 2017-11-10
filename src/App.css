@@ -98,3 +98,8 @@
   font-size: 20px;
   padding-bottom: 10px;
 }
+
+@font-face {
+  font-family: Seatgeek;
+  src: '/Users/byrne/Downloads/glyphter-font/fonts/font.ttf';
+}
