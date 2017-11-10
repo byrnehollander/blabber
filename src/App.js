@@ -56,6 +56,7 @@ class App extends Component {
                 value={this.state.average} // should be dynamic
                 starColor='#4449b4' /* color of selected icons, default `#ffb400` */
                 editing={false} /* is component available for editing, default `true` */
+                emptyStarColor='#bababa'
             />
             <div className="review-count">{this.state.numReviews} reviews</div>
           </h2>

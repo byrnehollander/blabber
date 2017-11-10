@@ -112,6 +112,7 @@ class CreateReview extends Component {
                     value={0} // should be dynamic
                     starColor='#4449b4' /* color of selected icons, default `#ffb400` */
                     editing={false} /* is component available for editing, default `true` */
+                    emptyStarColor='#bababa'
                 />
               </div>
               <a style={{fontSize: 16}} >Click to write a review for {this.props.eventTitle}</a>

@@ -16,6 +16,7 @@ class CreateReviewSection extends Component {
             starColor='#4449b4' /* color of selected icons, default `#ffb400` */
             editing={true} /* is component available for editing, default `true` */
             onStarClick={this.props.setStars} /* on icon click handler */
+            emptyStarColor='#bababa'
           />
         </div>
         <TextArea rows={4} value={this.props.content} onChange={this.props.setContent} />

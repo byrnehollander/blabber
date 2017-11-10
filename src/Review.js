@@ -61,6 +61,7 @@ class Review extends Component {
                     value={this.props.review.rating} // should be dynamic
                     starColor='#4449b4' /* color of selected icons, default `#ffb400` */
                     editing={false} /* is component available for editing, default `true` */
+                    emptyStarColor='#bababa'
                 />
                 <div style={{paddingLeft: 10}}>{moment(this.props.review.created_at).format('MMM Do YYYY')}</div>
               </div>
