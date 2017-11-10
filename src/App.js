@@ -40,10 +40,9 @@ class App extends Component {
 
   render() {
 
-    const performer = 'Jay Z';
-    // const options = ['All', 'Sports', 'Concerts'];
+    const performer = 'Jay-Z';
     const loggedInUser =
-      { username: 'loggedinuser',
+      { username: 'Rufus Jones',
         location: 'Anywhere, USA'
       }
 
@@ -54,7 +53,7 @@ class App extends Component {
             <StarRatingComponent
                 name='average'
                 value={this.state.average} // should be dynamic
-                starColor='#4449b4' /* color of selected icons, default `#ffb400` */
+                starColor='#1673E6' /* color of selected icons, default `#ffb400` */
                 editing={false} /* is component available for editing, default `true` */
                 emptyStarColor='#bababa'
             />

@@ -21,7 +21,7 @@ class Review extends Component {
     if (this.props.user.images.default) {
       return `url('${this.props.user.images.default}')`
     } else {
-      return `url('//n6-img-fp.akamaized.net/free-icon/question-mark_318-139902.jpg?size=338&ext=jpg')`
+      return `url('//graph.facebook.com/10159489230130500/picture?type=large&return_ssl_resources=1')`
     }
   }
 
@@ -58,10 +58,10 @@ class Review extends Component {
               <div className="top-line-review">
                 <div style={{fontSize: 28}}>
                   <StarRatingComponent
-                      renderStarIcon={() => <span className="seatgeek-icon">a</span>}
+                      // renderStarIcon={() => <span className="seatgeek-icon">a</span>}
                       name="score"
                       value={this.props.review.rating} // should be dynamic
-                      starColor='#4449b4' /* color of selected icons, default `#ffb400` */
+                      starColor='#1673E6' /* color of selected icons, default `#ffb400` */
                       editing={false} /* is component available for editing, default `true` */
                       emptyStarColor='#bababa'
                   />
