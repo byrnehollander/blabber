@@ -87,3 +87,14 @@
   padding-bottom: 5px;
   font-size: 18px;
 }
+
+.create-review-section {
+  padding-bottom: 15px;
+  max-width: 90%;
+}
+
+.create-review-header {
+  display: flex;
+  font-size: 20px;
+  padding-bottom: 10px;
+}

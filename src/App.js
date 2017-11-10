@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
 import Review from './Review';
+import CreateReview from './CreateReview';
 import Dropdown from './Dropdown';
 import ImageCarousel from './ImageCarousel';
 import './App.css';
@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     const averageReview = 4;
     const numReviews = 22;
-    const venue = 'Madison Square Garden';
+    const venue = 'Billy Joel';
     // const options = ['All', 'Sports', 'Concerts'];
     const user =
       { username: 'bhollander',
@@ -28,8 +28,7 @@ class App extends Component {
       date: '11/4/17',
       id: '123'
   };
-
-
+  const eventTitle = `Billy Joel on 8/30/17 at Madison Square Garden`
     return (
       <div className="App">
           <h2 className="header">
@@ -50,12 +49,13 @@ class App extends Component {
         <h3 className="verified-reviews">Verified reviews for {venue}</h3>
         <div className="dropdowns">
           <div className="filter-text">Filter by</div>
-          {/* <Button type="primary">Button</Button> */}
           <Dropdown />
         </div>
         <hr style={{marginTop: 20, width: '90%'}} />
         <div className="create-review">
-          Create a review
+          <CreateReview
+            eventTitle={eventTitle}
+          />
         </div>
         <hr style={{marginTop: 20, width: '90%'}} />
         <div className="user-reviews">
