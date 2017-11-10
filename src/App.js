@@ -8,7 +8,7 @@ import './App.css';
 import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
 
-export const base_url = 'http://192.168.3.78:8100';
+export const base_url = 'http://f4eaef13.ngrok.io';
 
 class App extends Component {
   constructor(props) {
