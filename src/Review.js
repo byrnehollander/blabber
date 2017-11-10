@@ -3,6 +3,7 @@ import { Card } from 'antd';
 import marked from 'marked';
 import StarRatingComponent from 'react-star-rating-component';
 import ImageCarousel from './ImageCarousel';
+import moment from 'moment';
 
 class Review extends Component {
   renderTitle = () => {
@@ -16,8 +17,8 @@ class Review extends Component {
   }
 
   setBackgroundImage = () => {
-    if (this.props.user.facebookID) {
-      return `url('//graph.facebook.com/${this.props.user.facebookID}/picture?type=large&return_ssl_resources=1')`
+    if (this.props.user.images) {
+      return `url('//${this.props.user.images.default}')`
     } else {
       return `url('//n6-img-fp.akamaized.net/free-icon/question-mark_318-139902.jpg?size=338&ext=jpg')`
     }
@@ -38,7 +39,7 @@ class Review extends Component {
   }
 
   createMarkup = () => {
-    return {__html: marked(this.props.review.content)}
+    return {__html: marked(this.props.review.review_text)}
   }
 
   render() {
@@ -57,11 +58,11 @@ class Review extends Component {
                 <StarRatingComponent
                     // renderStarIcon={() => <span></span>} can make it so star is inside of a rounded rectangle
                     name={this.props.review.id}
-                    value={this.props.review.score} // should be dynamic
+                    value={this.props.review.rating} // should be dynamic
                     starColor='#4449b4' /* color of selected icons, default `#ffb400` */
                     editing={false} /* is component available for editing, default `true` */
                 />
-                <div style={{paddingLeft: 10}}>{this.props.review.date}</div>
+                <div style={{paddingLeft: 10}}>{moment(this.props.review.created_at).format('MMM Do YYYY')}</div>
               </div>
             <div dangerouslySetInnerHTML={this.createMarkup()} />
             </div>

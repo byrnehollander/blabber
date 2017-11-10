@@ -5,7 +5,7 @@ class ReviewList extends Component {
 
   renderReviews = () => {
     return this.props.reviewData.map(function(rev) {
-      return <Review user={rev.user} review={rev.review} key={rev.review.id} />;
+      return <Review user={rev.user} review={rev} key={rev.id} />;
     })
   }
 
