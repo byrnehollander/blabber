@@ -7,7 +7,7 @@ import ImageCarousel from './ImageCarousel';
 class Review extends Component {
   renderTitle = () => {
     return (
-      <div>
+      <div style={{width: '100%'}}>
         <div className='username'>{this.props.user.username}</div>
         <div className='username'>{this.props.user.location}</div>
         <a className='username' style={{fontSize: 11}}>Report</a>
@@ -22,7 +22,7 @@ class Review extends Component {
         backgroundImage: `url('//graph.facebook.com/${this.props.user.facebookID}/picture?type=large&return_ssl_resources=1')`,
         backgroundSize: 'cover',
         height: 100,
-        width: 100
+        width: 163
         }}
       />
     )

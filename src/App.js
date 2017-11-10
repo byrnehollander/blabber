@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Review from './Review';
 import CreateReview from './CreateReview';
 import Dropdown from './Dropdown';
+import DateDropdown from './DateDropdown';
 import ImageCarousel from './ImageCarousel';
 import './App.css';
 import StarRatingComponent from 'react-star-rating-component';
@@ -48,8 +49,14 @@ class App extends Component {
           <div className="subheader">
         <h3 className="verified-reviews">Verified reviews for {venue}</h3>
         <div className="dropdowns">
-          <div className="filter-text">Filter by</div>
-          <Dropdown />
+          <div style={{display: 'flex'}}>
+            <div className="filter-text">Filter by</div>
+            <Dropdown />
+          </div>
+          <div style={{display: 'flex', paddingLeft: 30}}>
+            <div className="filter-text">Only show reviews for events on</div>
+            <DateDropdown />
+          </div>
         </div>
         <hr style={{marginTop: 20, width: '90%'}} />
         <div className="create-review">
