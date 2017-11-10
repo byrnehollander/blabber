@@ -8,8 +8,29 @@ import './App.css';
 import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
 
+const base_url = '192.168.3.78:8100';
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
+
+  componentDidMount = () => {
+    axios.get(`http://${base_url}/reviews/performers/927`)
+      .then((response) => {
+        this.setState({data: response.data})
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   render() {
+
+
     const averageReview = 4;
     const numReviews = 22;
     const performer = 'Jay Z';
@@ -99,7 +120,7 @@ class App extends Component {
         {/* <hr style={{marginTop: 20, width: '90%'}} /> */}
         <div className="user-reviews">
           <ReviewList
-            reviewData={reviewData}
+            reviewData={this.state.data}
            />
         </div>
       </div>

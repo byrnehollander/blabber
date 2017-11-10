@@ -17,8 +17,8 @@ class Review extends Component {
   }
 
   setBackgroundImage = () => {
-    if (this.props.user.images) {
-      return `url('//${this.props.user.images.default.replace(/\\\//g, "/")}')`
+    if (this.props.user.images.default) {
+      return `url('${this.props.user.images.default}')`
     } else {
       return `url('//n6-img-fp.akamaized.net/free-icon/question-mark_318-139902.jpg?size=338&ext=jpg')`
     }
