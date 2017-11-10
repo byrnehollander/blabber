@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     const averageReview = 4;
     const numReviews = 22;
-    const venue = 'Billy Joel';
+    const performer = 'Jay Z';
     // const options = ['All', 'Sports', 'Concerts'];
     const loggedInUser =
       { username: 'loggedinuser',
@@ -59,7 +59,7 @@ class App extends Component {
 }
 ]
 
-  const eventTitle = `Billy Joel on 8/30/17 at Madison Square Garden`
+  const eventTitle = `Jay-Z on 8/30/17 at Madison Square Garden`
     return (
       <div className="App">
           <h2 className="header">
@@ -77,7 +77,7 @@ class App extends Component {
             third='http://img.wennermedia.com/social/rs-27559-20121204-billy-joel-1980-624x420-1354636750.jpg'
           />
           <div className="subheader">
-        <h3 className="verified-reviews">Verified reviews for {venue}</h3>
+        <h3 className="verified-reviews">Verified reviews for {performer}</h3>
         <div className="dropdowns">
           <div style={{display: 'flex'}}>
             <div className="filter-text">Filter by</div>
