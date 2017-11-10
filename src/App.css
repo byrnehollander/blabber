@@ -79,10 +79,11 @@
 
 .review-body {
   padding-left: 30px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .top-line-review {
   display: flex;
   padding-bottom: 5px;
+  font-size: 18px;
 }

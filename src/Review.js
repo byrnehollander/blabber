@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card } from 'antd';
 import marked from 'marked';
 import StarRatingComponent from 'react-star-rating-component';
+import ImageCarousel from './ImageCarousel';
 
 class Review extends Component {
   renderTitle = () => {
@@ -55,6 +56,11 @@ class Review extends Component {
             <div dangerouslySetInnerHTML={this.createMarkup()} />
             </div>
           </div>
+          <ImageCarousel
+            first='https://s3-media2.fl.yelpcdn.com/bphoto/jkBYbfpigFq7RNI02jJz6A/o.jpg'
+            second='https://s3-media3.fl.yelpcdn.com/bphoto/pMGogUE5HwcvcJSZE6KyRg/o.jpg'
+            third='https://s3-media4.fl.yelpcdn.com/bphoto/GJ95BLY3xRykjfTjl9Ie7Q/o.jpg'
+          />
         </Card>
       </div>
     );

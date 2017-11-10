@@ -41,7 +41,11 @@ class App extends Component {
             />
             <div className="review-count">{numReviews} reviews</div>
           </h2>
-          <ImageCarousel />
+          <ImageCarousel
+            first='http://cdn.cnn.com/cnnnext/dam/assets/170822114656-billy-joel-super-tease.jpg'
+            second='http://img.wennermedia.com/480-width/rs-billy-joel-v2-f3fa0c59-2eed-4b00-a506-67a25449c3cf.jpg'
+            third='http://img.wennermedia.com/social/rs-27559-20121204-billy-joel-1980-624x420-1354636750.jpg'
+          />
           <div className="subheader">
         <h3 className="verified-reviews">Verified reviews for {venue}</h3>
         <div className="dropdowns">
