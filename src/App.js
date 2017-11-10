@@ -58,7 +58,7 @@ class App extends Component {
                 editing={false} /* is component available for editing, default `true` */
                 emptyStarColor='#bababa'
             />
-            <div className="review-count">{this.state.numReviews} reviews</div>
+            <div className="review-count">{this.state.numReviews} Verified Reviews</div>
           </h2>
           {/* <ImageCarousel
             first='http://cdn.cnn.com/cnnnext/dam/assets/170822114656-billy-joel-super-tease.jpg'
@@ -66,7 +66,7 @@ class App extends Component {
             third='http://img.wennermedia.com/social/rs-27559-20121204-billy-joel-1980-624x420-1354636750.jpg'
           /> */}
           <div className="subheader">
-        <h3 className="verified-reviews">Verified reviews for {performer}</h3>
+
         <div className="dropdowns">
           <div style={{display: 'flex'}}>
             <div className="filter-text">Filter by</div>
