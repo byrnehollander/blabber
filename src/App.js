@@ -8,7 +8,7 @@ import './App.css';
 import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
 
-export const base_url = 'http://f4eaef13.ngrok.io';
+export const base_url = 'https://f4eaef13.ngrok.io';
 
 class App extends Component {
   constructor(props) {
@@ -60,11 +60,11 @@ class App extends Component {
             />
             <div className="review-count">{this.state.numReviews} reviews</div>
           </h2>
-          <ImageCarousel
+          {/* <ImageCarousel
             first='http://cdn.cnn.com/cnnnext/dam/assets/170822114656-billy-joel-super-tease.jpg'
             second='http://img.wennermedia.com/480-width/rs-billy-joel-v2-f3fa0c59-2eed-4b00-a506-67a25449c3cf.jpg'
             third='http://img.wennermedia.com/social/rs-27559-20121204-billy-joel-1980-624x420-1354636750.jpg'
-          />
+          /> */}
           <div className="subheader">
         <h3 className="verified-reviews">Verified reviews for {performer}</h3>
         <div className="dropdowns">
