@@ -24,6 +24,8 @@ class CreateReview extends Component {
     axios.post(`${base_url}/reviews/events/3935822`, {rating: this.state.performerStars, review_text: this.state.performerContent})
       .then((response) => {
         this.setState({open: false});
+        const newReview = response;
+        this.props.onCreation(newReview)
       })
       .catch(function (error) {
         console.log(error);

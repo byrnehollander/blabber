@@ -38,6 +38,12 @@ class App extends Component {
       });
   }
 
+  onCreation = (newReview) => {
+    const data = this.state.data;
+    data.push(newReview.data)
+    this.setState({data});
+  }
+
   render() {
 
     const performer = 'Jay-Z';
@@ -81,6 +87,7 @@ class App extends Component {
           <CreateReview
             eventTitle={eventTitle}
             loggedInUser={loggedInUser}
+            onCreation={this.onCreation}
           />
         </div>
         {/* <hr style={{marginTop: 20, width: '90%'}} /> */}
