@@ -13,7 +13,7 @@ class CreateReviewSection extends Component {
           <StarRatingComponent
             name={this.props.title}
             value={this.props.numStars} // should be dynamic
-            starColor='#4449b4' /* color of selected icons, default `#ffb400` */
+            starColor='#1673E6' /* color of selected icons, default `#ffb400` */
             editing={true} /* is component available for editing, default `true` */
             onStarClick={this.props.setStars} /* on icon click handler */
             emptyStarColor='#bababa'

@@ -110,7 +110,7 @@ class CreateReview extends Component {
                 <StarRatingComponent
                     name='empty'
                     value={0} // should be dynamic
-                    starColor='#4449b4' /* color of selected icons, default `#ffb400` */
+                    starColor='#1673E6' /* color of selected icons, default `#ffb400` */
                     editing={false} /* is component available for editing, default `true` */
                     emptyStarColor='#bababa'
                 />
